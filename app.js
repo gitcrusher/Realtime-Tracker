@@ -9,7 +9,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 app.set("view engine","ejs");
-app.set(express.static(path.join(__dirname, "public"))); // this coe is written so that we could write vanila css and all etc.
+app.use(express.static(path.join(__dirname, "public"))); // this coe is written so that we could write vanila css and all etc.
 
 io.on("connection",function(socket) {
     console.log("connected");
